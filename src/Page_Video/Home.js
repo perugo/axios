@@ -9,8 +9,6 @@ export const Home=()=> {
     }  
     let query = useQuery();
     let videoId = query.get("v");
-
-    //const videoSrc = `https://pythonmodulefol.s3.ap-northeast-1.amazonaws.com/${videoId}/output.m3u8`;
     const videoSrc="https://pythonmodulefol.s3.ap-northeast-1.amazonaws.com/"+videoId+"/output.m3u8";
     return (
         <div>
