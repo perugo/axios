@@ -11,7 +11,7 @@ const VideoPlayer = (props) => {
       // Check if Video.js player has not been initialized already
       if (videoNode.current && !videoNode.current.player) {
         player = videojs(videoNode.current, props);
-        player.playbackRate(0.3);
+        //player.playbackRate(0.3);
 
         // Log any video.js errors
         player.on('error', function() {

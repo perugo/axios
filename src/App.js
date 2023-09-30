@@ -19,11 +19,11 @@ function App() {
         <Route exact path="/" element={<Home/>}/>
         <Route exact path="/interference" element={<Interference_Home/>}/>
         <Route exact path="/video" element={<Page_Video/>}/>
-        <Route exact path="/wavedraw" element={<WaveDraw/>}/>
+        
       </Routes>
     </div>
     </ApolloProvider>
   );
 }
-
+//<Route exact path="/wavedraw" element={<WaveDraw/>}/>
 export default App;

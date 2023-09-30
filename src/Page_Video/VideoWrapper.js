@@ -5,7 +5,7 @@ const VideoWrapper = ({ src }) => {
   const videoOptions = {
     fill: true,
     fluid: true,
-    autoplay: true,
+    autoplay: false,
     controls: true,
     preload: 'metadata',
     muted: true,
