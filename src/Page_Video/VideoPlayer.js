@@ -1,24 +1,26 @@
 import React, { useEffect, useRef, useState } from 'react';
 import videojs from 'video.js';
 import 'video.js/dist/video-js.css';
-//ff
+
 const VideoPlayer = (props) => {
   const videoNode = useRef(null);
-  const [player, setPlayer] = useState(null);
+  let player;
 
   useEffect(() => {
-    if (videoNode.current) {
-      const videoPlayer = videojs(videoNode.current, props);
-      videoPlayer.playbackRate(0.3);
-      setPlayer(videoPlayer);
-
-      return () => {
-        if (player !== null) {
-          player.dispose();
-        }
-      };
+    // Check if Video.js player has not been initialized already
+    if (videoNode.current && !videoNode.current.player) {
+      player = videojs(videoNode.current, props);
+      player.playbackRate(0.3);
     }
-  }, [player, props]);
+
+    return () => {
+      // Dispose of any Video.js player instances on cleanup
+      if (player) {
+        player.dispose();
+      }
+    };
+  }, [props]);
+  
 
   return (
 <div data-vjs-player style={{ width: "100%",position:"relative",PaddingBottom:"100%",overflow:"hidden"}}>
