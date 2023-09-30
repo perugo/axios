@@ -3,7 +3,7 @@ import { Routes,Route} from 'react-router-dom';
 import { Home as Interference_Home} from './Page_Interference/Home';
 import {Home as Home} from './Page_Home/Home';
 import {Home as Page_Video} from './Page_Video/Home';
-import {Home as WaveDraw} from './Page_WaveDraw/Home';
+//import {Home as WaveDraw} from './Page_WaveDraw/Home';
 import { ApolloProvider } from '@apollo/client';
 import { combinedLink } from './API/apolloConfig';
 import { ApolloClient, InMemoryCache } from '@apollo/client';
