@@ -14,7 +14,7 @@ const Container=styled.div`
 `
 const ButtonDownloadWrapper=styled.div`
 margin-top:30px;
-margin-bottom:15px;
+margin-bottom:5px;
 text-align: center
 `
 const ButtonDownload=styled.div`
@@ -215,7 +215,7 @@ export const RightBar=({log,setting,changepage,push})=> {
       <ButtonDownloadWrapper>
         <ButtonDownload onClick={push}>シュミレーション実行</ButtonDownload>
       </ButtonDownloadWrapper>
-      <RightBarResultBox log={log}></RightBarResultBox>
+      
         {setting  && (
         <SettingWrapper>
           <Box object={settingbox} changepage={changepage}></Box>
@@ -226,5 +226,6 @@ export const RightBar=({log,setting,changepage,push})=> {
     )
   };
 /**
+ * <RightBarResultBox log={log}></RightBarResultBox>
  *       <RightBarResultBox log={log}></RightBarResultBox>
  */

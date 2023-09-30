@@ -6,7 +6,7 @@ const Container=styled.div`
   margin-left:30px;
   margin-top:15px;
   margin-right:5px;
-  width:600px;
+  width:500px;
 `
 const TextNumber=styled.span`
   font:100% times new roman,serif;
@@ -29,7 +29,7 @@ const TextM=styled.div`
 `
 
 const DefaultSettingWrapper=styled.div`
-  width:450px;
+  width:400px;
 `
 const DefaultText=styled.div`
   text-align:center;

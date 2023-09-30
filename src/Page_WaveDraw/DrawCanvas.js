@@ -449,7 +449,7 @@ export const DrawCanvas = ({ data, setBitmap,mediumArray,setSource}) => {
                 <div style={{ width: width + "px", height: height + "px" }}>
                     <Canvas ref={canvas4Ref} width={width} height={height} style={{ opacity: 1.0 }} />
                     <Canvas ref={canvas3Ref} width={width} height={height} style={{ opacity: 1.0 }} />
-                    <Canvas ref={canvas2Ref} width={width} height={height} style={{ opacity: 0.5 }} />
+                    <Canvas ref={canvas2Ref} width={width} height={height} style={{ opacity: 0.7 }} />
                     <Canvas ref={canvas1Ref} width={width} height={height} style={{ opacity: 1.0 }} />
                 </div>
             </Layout_Wrapper>

@@ -16,7 +16,7 @@ const VideoWrapper = ({ src }) => {
   };
 
   return (
-    <div style={{ width: '500px'}}>
+    <div style={{ width: '800px'}}>
       <VideoPlayer {...videoOptions} />
     </div>
   );

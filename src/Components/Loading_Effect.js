@@ -8,6 +8,7 @@ const PopupMain=styled.div`
   height:100%;
   background-color:transparent;
   display: flex;
+  z-index: 1; /* Ensure it's on top of other content */
 
 `
 const LeftBar=styled.div`
@@ -33,6 +34,7 @@ const MiddleBar=styled.div`
 `
 
 const Img_Wrapper=styled.div`
+margin-top;100px;
   height:200px;
   display:flex-inline;
 `
@@ -43,6 +45,16 @@ const Img_Inner=styled.div`
   height:200px;
   width:200px;
 `
+const StyledText=styled.div`
+text-align:center;
+margin-left:auto;
+margin-right:auto;
+width:200px;
+height:auto;
+padding-bottom:10px;
+padding-top:10px;
+margin-top:15px;
+`
 const Middle_Inner=styled.div`
   display:flex;
   flex-direction:column;
@@ -50,7 +62,10 @@ const Middle_Inner=styled.div`
 const RightBar=styled.div`
   width:100%;
 `
-
+const Text = styled.h2`
+  margin: 0; /* Remove any default margin on the h2 element */
+  color: #333; /* Text color */
+`;
 export default function Loading_Effect(){
   return(
     <PopupMain>
@@ -66,9 +81,9 @@ export default function Loading_Effect(){
             </Img_Inner>
           </Img_Wrapper>
           <Img_Wrapper>
-            <Img_Inner style={{width:"400px",backgroundColor:"white",height:"auto"}}>
-              <h3>jsonファイルを作成中です</h3>
-            </Img_Inner>
+            <StyledText style={{width:"400px",backgroundColor:"white"}}>
+              <Text>シュミレーション動画を作成中</Text>
+            </StyledText>
           </Img_Wrapper>
         </Middle>
 

@@ -44,7 +44,7 @@ export const Home=()=> {
     setPending(true);
     setTimeout(() => {
       setPending(false);
-    }, 7000);
+    }, 17000);
 
       const inputObj = {
         type: "ale-antena",
