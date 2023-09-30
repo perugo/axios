@@ -9,7 +9,7 @@ const VideoPlayer = (props) => {
   useEffect(() => {
     if (videoNode.current) {
       const videoPlayer = videojs(videoNode.current, props);
-      videoPlayer.playbackRate(0.25);  // Add this line here
+      videoPlayer.playbackRate(0.3);  // Add this line here
       setPlayer(videoPlayer);
 
       return () => {

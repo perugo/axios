@@ -233,6 +233,7 @@ export const Home=()=> {
 }
 
 
+
 /*
 function left_error_detector(input){
     var errors = [];
