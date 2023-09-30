@@ -1,6 +1,6 @@
 import React from 'react';
 import VideoPlayer from './VideoPlayer';
-//ff
+
 const VideoWrapper = ({ src }) => {
   const videoOptions = {
     fill: true,
