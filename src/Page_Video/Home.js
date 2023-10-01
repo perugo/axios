@@ -5,7 +5,12 @@ import { useLocation } from 'react-router-dom';
 import HLSJSPlayer from './HLSJSPlayer';
 const videoSrc="https://pythonmodulefol.s3.ap-northeast-1.amazonaws.com/EgUgb9GQXYjQ/output.m3u8";
 export const Home=()=> {  
-
+  function useQuery() {
+    return new URLSearchParams(useLocation().search);
+}  
+let query = useQuery();
+let videoId = query.get("v");
+const videoSrc="https://pythonmodulefol.s3.ap-northeast-1.amazonaws.com/"+videoId+"/output.m3u8";
     
     return (
         <div>
@@ -13,7 +18,6 @@ export const Home=()=> {
           
           <HLSJSPlayer src={videoSrc}></HLSJSPlayer>
           </div>
-        Video Src: {videoSrc}
       </div>
     )
 }

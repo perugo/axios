@@ -7,6 +7,8 @@ import React,{useState,useEffect,useRef} from 'react';
 import {Home as Setting_Basic} from './SettingPage_Basic/Home';
 import {gql ,useLazyQuery,useMutation} from '@apollo/client';
 import {Home as Setting_Detail} from './SettingPage_Detail/Home';
+import PopUp from './Components/PopUpResult';
+
 const GET_DATA = gql`mutation MyMutation($input: MyInput!) {createData(input: $input){url}}`;
 
 const Wrapper=styled.div`
@@ -39,6 +41,10 @@ export const Home=()=> {
   const [getNote, { loading, error, data: fetchedData }] = useMutation(GET_DATA, {
     context: { clientName: 'homeApi1' }  // This context determines which client to use
   });
+
+  const [showPopUp, setShowPopUp] = useState(false);
+  const [popupType, setPopupType] = useState(null);
+
   const push = () => {
     if(!Pending){
     setPending(true);
@@ -63,6 +69,7 @@ export const Home=()=> {
   };
   useEffect(() => {
       if (!loading && fetchedData) {
+        setPending(true);
         setData(fetchedData.getNote);
       }
     }, [loading, fetchedData]);
@@ -193,10 +200,16 @@ export const Home=()=> {
   },[showwindow])
 
   useEffect(() => {
+    if (loading) {
+      setShowPopUp(false);  // Hide popup while loading
+    }
     if (!loading && fetchedData) {
-      setTimeout(() => {
-        window.open(fetchedData.createData.url, '_blank');
-      }, 2000);
+      if (fetchedData.createData && fetchedData.createData.url) {
+        setPopupType("success");
+      } else {
+        setPopupType("failure");
+      }
+      setShowPopUp(true);  // Show popup after data is fetched
     }
   }, [loading, fetchedData]);
     return (
@@ -212,6 +225,7 @@ export const Home=()=> {
           {Pending == true && (
             <Loading_Effect></Loading_Effect>
           )}
+          {showPopUp && <PopUp type={popupType} data={fetchedData} onClose={() => setShowPopUp(false)} />}
         </Wrapper>
         )}
          {showwindow==="setting" &&(
