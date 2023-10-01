@@ -69,7 +69,7 @@ export const Home=()=> {
   };
   useEffect(() => {
       if (!loading && fetchedData) {
-        setPending(true);
+        setPending(false);
         setData(fetchedData.getNote);
       }
     }, [loading, fetchedData]);
