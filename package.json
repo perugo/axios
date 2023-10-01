@@ -12,6 +12,7 @@
     "chart.js": "^4.3.0",
     "function-plot": "^1.23.3",
     "graphql": "^16.8.0",
+    "hls.js": "^1.4.12",
     "loader-utils": "^3.2.1",
     "rc-slider": "^10.2.1",
     "react": "^18.2.0",
