@@ -180,7 +180,7 @@ export const RightBar = ({ antennaPresets, antenna, setAntenna, spatial, setSpat
       <SVGInner>
         <StyledImg
           src={`${process.env.PUBLIC_URL}/stopButton.svg`}
-          alt="Stop Button in Red Circle"
+          alt="Stop Button in Red Circlee"
         />
       </SVGInner>
     </SVGWrapperCombined>
